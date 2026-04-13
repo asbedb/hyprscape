@@ -1,0 +1,85 @@
+window {
+    background-color: rgba(28, 24, 21, 0.029);
+    color: #fbff1f; 
+    font-family: "Runescape UF", "Arial", sans-serif;
+    border: 3px solid #3e3529;
+    border-radius: 0px;
+    font-size: 16px;
+}
+
+flowboxchild {
+    padding: 5px;
+    border: 2px solid #5d4a37;
+    background-color: #473a2d;
+    margin: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+flowboxchild:hover {
+    background-color: #5d4a37;
+    border-color: #ff981f;
+    outline: 1px solid #ff981f;
+}
+
+flowboxchild:selected {
+    background-color: #3e3529;
+    outline: 2px solid #ffffff;
+}
+
+button {
+    background-image: linear-gradient(to bottom, #5d4a37, #3e3529);
+    border: 2px solid #2e261d;
+    border-top: 2px solid #7d6a57; 
+    border-left: 2px solid #7d6a57;
+    color: #ff981f;
+    text-shadow: 1px 1px 0px #000000;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-image: linear-gradient(to bottom, #6d5a47, #4e4539);
+    color: #ffffff;
+}
+
+button:active {
+    border-top: 2px solid #2e261d;
+    border-left: 2px solid #2e261d;
+    border-bottom: 2px solid #7d6a57;
+    border-right: 2px solid #7d6a57;
+}
+
+combobox, 
+combobox button {
+    background-color: #14110e; 
+    background-image: none; 
+    border: 1px solid #5d4a37;
+    color: #fbff1f;
+}
+
+window.popup menu {
+    background-color: #1c1815;
+    border: 2px solid #3e3529;
+    color: #fbff1f;
+}
+
+menuitem:hover {
+    background-color: #3e3529;
+    color: #ffffff;
+}
+
+entry {
+    background-color: #1c1815;
+    border: 1px solid #5d4a37;
+    color: #00ff00; 
+}
+
+scrollbar slider {
+    background-color: #5d4a37;
+    border: 1px solid #3e3529;
+    min-width: 8px;
+}
+
+scrollbar trough {
+    background-color: #2e261d;
+}

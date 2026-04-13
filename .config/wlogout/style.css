@@ -1,0 +1,48 @@
+* {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+window {
+    font-family: "RuneScape UF", sans-serif;
+    font-size: 22pt; 
+    background-color: rgba(30, 30, 46, 0.8);
+}
+
+button {
+    color: #cccc03; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+    margin: 5px;
+}
+
+button:hover {
+    color: #ff0000; 
+    background-color: rgba(255, 255, 255, 0.05);
+    background-size: 25%;
+    margin: 10px;
+    font-size: 16pt;
+}
+
+/* --- Icons (Relative to this CSS file) --- */
+#lock { background-image: image(url("./icons/lock.png")); }
+#lock:hover { background-image: image(url("./icons/lock-hover.png")); }
+
+#logout { background-image: image(url("./icons/logout.png")); }
+#logout:hover { background-image: image(url("./icons/logout-hover.png")); }
+
+#suspend { background-image: image(url("./icons/sleep.png")); }
+#suspend:hover { background-image: image(url("./icons/sleep-hover.png")); }
+
+#shutdown { background-image: image(url("./icons/power.png")); }
+#shutdown:hover { background-image: image(url("./icons/power-hover.png")); }
+
+#reboot { background-image: image(url("./icons/restart.png")); }
+#reboot:hover { background-image: image(url("./icons/restart-hover.png")); }
+
+#hibernate { background-image: image(url("./icons/hibernate.png")); }
+#hibernate:hover { background-image: image(url("./icons/hibernate-hover.png")); }

@@ -1,0 +1,96 @@
+* {
+    font-family: "Runescape UF", "Fixedsys", monospace;
+    font-size: 16px;
+    text-shadow: 2px 2px #000000;
+}
+
+window#waybar {
+    background-color: #3e3529; 
+    border-bottom: 3px solid #1b1914;
+    border-top: 3px solid #5d5447;
+    color: #ffff00; 
+}
+
+#workspaces, #clock, #battery, #cpu, #memory, #pulseaudio, #tray, #custom-power, #window {
+    padding: 0 12px;
+    margin: 4px 3px;
+    background: #4a4133; 
+    border: 2px solid #1b1914;
+    box-shadow: inset 1px 1px #5d5447; 
+}
+
+#workspaces button {
+    color: #ff981f; 
+    background: transparent;
+    border-radius: 0;
+    padding: 0 8px;
+}
+
+#workspaces button.active {
+    color: #ffff00; 
+    background: #5d5447;
+    box-shadow: inset 2px 2px #1b1914; 
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    box-shadow: inset 1px 1px #ffffff; 
+}
+
+#workspaces button.urgent {
+    color: #ffffff;
+    background-color: #9d2020; 
+}
+
+#window { 
+    color: #ffff00; 
+}
+
+#cpu { 
+    color: #ff981f; 
+}
+
+#memory { 
+    color: #ffffff; 
+}
+
+#battery { 
+    color: #00ff00; 
+}
+
+#battery.critical:not(.charging) {
+    color: #ff0000; 
+}
+
+#pulseaudio { 
+    color: #ffff00; 
+}
+
+#clock { 
+    color: #ffff00; 
+}
+
+#custom-power {
+    color: #ff0000; 
+    font-weight: bold;
+}
+
+tooltip {
+    background: #3e3529;
+    border: 2px solid #1b1914;
+}
+
+tooltip label {
+    color: #ffff00;
+}
+
+menu, menuitem {
+    background-color: #3e3529;
+    color: #ffff00;
+    border: 1px solid #5d5447;
+}
+
+menuitem:hover {
+    background-color: #4a4133; 
+    color: #ffffff; 
+}

@@ -1,0 +1,70 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+    "modules-left": ["hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "battery",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 5 
+        }
+    },
+
+    "hyprland/window": {
+        "format": "Active: {title}",
+        "max-length": 40,
+        "separate-outputs": true
+    },
+
+    "cpu": {
+        "format": "Str {usage}%",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "Pray {percentage}%",
+        "interval": 2
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "HP {capacity}%",
+        "format-charging": "Spec {capacity}%"
+    },
+
+    "pulseaudio": {
+        "format": "Vol {volume}%",
+        "format-muted": "Muted",
+        "on-click": "pavucontrol"
+    },
+
+    "clock": {
+        "format": "Time {:%H:%M}",
+        "format-alt": "Date {:%Y-%m-%d}"
+    },
+
+    "custom/power": {
+        "format": "Logout",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}

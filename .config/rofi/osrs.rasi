@@ -1,0 +1,60 @@
+* {
+    bg:          #3e3529; 
+    bg-selected: #4e4334; 
+    fg:          #ffbb00; 
+    border-stone: #3e3529; 
+    border-gold: #bf9527; 
+    black:       #000000;
+    background-color: transparent;
+    text-color:       @fg;
+    font: "Runescape UF 12";
+}
+
+window {
+    background-color: @bg;
+    border:           3px;
+    border-color:     @border-stone; 
+    padding:          5px;
+    width:            30%;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding:  4px;
+    background-color: @black; 
+}
+
+prompt {
+    margin: 0 10px 0 0;
+}
+
+entry {
+    placeholder: "Search Gielinor...";
+    placeholder-color: #7a7a7a;
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: 0;
+    margin: 5px 0 0 0;
+}
+
+element {
+    padding: 5px;
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color: #ffffff; 
+    border: 1px;
+    border-color: @border-gold; 
+}
+
+element-text {
+    vertical-align: 0.5;
+}
