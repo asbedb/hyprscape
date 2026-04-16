@@ -9,6 +9,7 @@ A collection of dotfiles to **Lumby tele** your Hyprland setup. Whether you're w
 * **Status Bar:** `waybar`
 * **Wallpaper Engine:** `waypaper` (swww backend recommended)
 * **Logout Menu:** `wlogout`
+* **SDDM Theme** `sddm`
 
 
 ## Screenshots
@@ -16,6 +17,7 @@ A collection of dotfiles to **Lumby tele** your Hyprland setup. Whether you're w
 ![Kitty with Waybar](/screenshots/waybar-terminal.png)
 ![rofi](/screenshots/rofi.png)
 ![wlogout](/screenshots/wlogout.png)
+![sddm](/screenshots/sddm.png)
 
 ## Installation Guide
 
@@ -26,10 +28,18 @@ You will need the following packages. You can install them via `pacman` or your 
 
 ```bash
 # Core components
-sudo pacman -S hyprland kitty rofi-wayland waybar waypaper wlogout swww
+sudo pacman -S hyprland kitty rofi-wayland waybar waypaper wlogout swww sddm
 ```
 
 Copy the font into your `~/.local/share/fonts/` folder to ensure its accessible by the system. 
+
+#### SDDM
+If you wish to install the SDDM theme copy the osrs-theme folder to `~/usr/share/sddm/themes` and set your `/etc/sddm.conf` file to reflect the below:
+
+```yaml
+[Theme]
+Current=osrs-theme
+```
 
 ### 2. Backup Your Existing Configs
 Back up your current files first:

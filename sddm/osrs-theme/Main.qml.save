@@ -1,0 +1,142 @@
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import SddmComponents 2.0
+
+Rectangle {
+    id: container
+    width: 1920
+    height: 1080
+    color: "black"
+
+    // Background Image
+    Image {
+        id: background
+        source: "assets/background.gif" // You can choose gif or png up to you
+        anchors.fill: parent
+        fillMode: Image.PreserveAspectCrop
+    }
+
+    Rectangle {
+        id: loginBox
+        width: 420
+        height: 320
+        anchors.centerIn: parent
+        color: "#3e3529" 
+        border.color: "#5d5447" 
+        border.width: 4
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 15
+
+            Text {
+                text: "Existing User"
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: "#ff981f" 
+                font.pixelSize: 24
+                font.bold: true
+                font.family: "RuneScape UF" 
+            }
+
+            Column {
+                spacing: 5
+                Text { text: "Username:"; color: "#ffff00"; font.pixelSize: 14 }
+                Rectangle {
+                    width: 300; height: 35
+                    color: "black"; border.color: "#5d5447"; border.width: 2
+                    TextInput {
+                        id: name
+                        anchors.fill: parent
+                        anchors.margins: 8
+                        color: "white"
+                        font.pixelSize: 16
+                        text: userModel.lastUser
+                        focus: true
+                        clip: true
+                        KeyNavigation.tab: password
+                    }
+                }
+            }
+
+            Column {
+                spacing: 5
+                Text { text: "Password:"; color: "#ffff00"; font.pixelSize: 14 }
+                Rectangle {
+                    width: 300; height: 35
+                    color: "black"; border.color: "#5d5447"; border.width: 2
+                    TextInput {
+                        id: password
+                        anchors.fill: parent
+                        anchors.margins: 8
+                        color: "white"
+                        font.pixelSize: 16
+                        echoMode: TextInput.Password
+                        clip: true
+                        onAccepted: sddm.login(name.text, password.text, session.currentIndex)
+                    }
+                }
+            }
+
+            Rectangle {
+                id: loginButton
+                width: 120; height: 40
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: mouseArea.pressed ? "#8b0000" : "#a67c52"
+                border.color: "#3e3529"
+                border.width: 2
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "Log In"
+                    color: "black"
+                    font.bold: true
+                }
+
+                MouseArea {
+                    id: mouseArea
+                    anchors.fill: parent
+                    onClicked: sddm.login(name.text, password.text, session.currentIndex)
+                }
+            }
+        }
+    }
+
+    Rectangle {
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.margins: 20
+        width: 200; height: 30
+        color: "#3e3529"
+        border.color: "#5d5447"
+
+        Text {
+            anchors.centerIn: parent
+            text: sessionModel.get(session.currentIndex).name
+            color: "#ffff00"
+        }
+
+        Item {
+            id: session
+            property int currentIndex: sessionModel.lastIndex
+        }
+    }
+
+    Text {
+        id: errorMessage
+        anchors.top: loginBox.bottom
+        anchors.topMargin: 15
+        anchors.horizontalCenter: parent.horizontalCenter
+        color: "#ff0000"
+        font.pixelSize: 14
+        text: ""
+    }
+
+    Connections {
+        target: sddm
+        onLoginSucceeded: {}
+        onLoginFailed: {
+            errorMessage.text = "Invalid credentials"
+            password.text = ""
+        }
+    }
+}
