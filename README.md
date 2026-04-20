@@ -4,20 +4,28 @@ A collection of dotfiles to **Lumby tele** your Hyprland setup. Whether you're w
 
 ## Current Config Files
 * **Window Manager:** `hyprland`
+* **Lock Screen** `hyprlock`
 * **Terminal:** `kitty`
 * **App Launcher:** `rofi` (Wayland fork)
 * **Status Bar:** `waybar`
 * **Wallpaper Engine:** `waypaper` (swww backend recommended)
 * **Logout Menu:** `wlogout`
-* **SDDM Theme** `sddm`
+* **Login Provider** `sddm`
 
 
 ## Screenshots
+### waypaper
 ![waypaper](/screenshots/waypaper.png)
+### waybar and kitty
 ![Kitty with Waybar](/screenshots/waybar-terminal.png)
+### rofi
 ![rofi](/screenshots/rofi.png)
+### wlogout
 ![wlogout](/screenshots/wlogout.png)
+### sddm
 ![sddm](/screenshots/sddm.png)
+### hyprlock
+![hyprlock](/screenshots/hyprlock.png)
 
 ## Installation Guide
 
@@ -28,7 +36,7 @@ You will need the following packages. You can install them via `pacman` or your 
 
 ```bash
 # Core components
-sudo pacman -S hyprland kitty rofi-wayland waybar waypaper wlogout swww sddm
+sudo pacman -S hyprland kitty rofi-wayland waybar waypaper wlogout swww sddm hyprlock
 ```
 
 Copy the font into your `~/.local/share/fonts/` folder to ensure its accessible by the system. 
